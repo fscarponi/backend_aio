@@ -20,8 +20,13 @@ The project is in a very early stage and if you have some time your help will be
 - automation for build and deploy it as container in ghcr *TODO*
 - guide to deploy *TODO*
 
-## Installation
+## Future Features
+- simple frontend with kotlin compose for manage and monitoring server status
+- a simple angular frontend as base to extend for personal intents
 
+
+## Installation
+- actually can not be deployed, just clone repo and run from IDE (check DIModules for env var needed)
 
 
 ## Development
