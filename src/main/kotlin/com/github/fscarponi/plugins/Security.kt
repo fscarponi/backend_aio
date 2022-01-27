@@ -18,9 +18,9 @@ import org.kodein.di.ktor.closestDI
 
 fun Application.configureSecurity() {
 
-    val audience=closestDI().direct.instance<String>("jwt.audience")
-    val appRealm=closestDI().direct.instance<String>("jwt.realm")
-    val domain=closestDI().direct.instance<String>("jwt.domain")
+    val audience=closestDI().direct.instance<String>("JWT_AUDIENCE")
+    val appRealm=closestDI().direct.instance<String>("JWT_REALM")
+    val domain=closestDI().direct.instance<String>("JWT_DOMAIN")
 
     authentication {
         jwt {

@@ -24,9 +24,9 @@ interface AuthTokenGenerator {
 }
 
 data class AIOTokenGenerator(
-    private val algorithm: Algorithm,
+    private val secret: String,
     private val issuer: String,
-    private val audience: String = issuer
+    private val audience: String = issuer,
 ) : AuthTokenGenerator {
 
     @OptIn(ExperimentalTime::class)
@@ -46,7 +46,7 @@ data class AIOTokenGenerator(
             .withSubject(subject)
             .withClaim("createdAt", now.toEpochMilli())
             .withClaim("role", role.toString())
-            .sign(algorithm)
+            .sign(Algorithm.HMAC256(secret))
         return AuthTokenResponseData(jwt, expAtDate.time)
     }
 
