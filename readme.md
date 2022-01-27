@@ -19,6 +19,7 @@ The project is in a very early stage and if you have some time your help will be
 - easy creation for routes (with auth or not) *In Progress*
 - automation for build and deploy it as container in ghcr *TODO*
 - guide to deploy *TODO*
+- CI/CD integration
 
 ## Installation
 
