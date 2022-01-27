@@ -47,6 +47,7 @@ dependencies {
     implementation("org.kodein.di:kodein-di-framework-ktor-server-jvm:7.10.0")
 
 
+    implementation("org.junit.jupiter:junit-jupiter:5.7.0")
     testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
 

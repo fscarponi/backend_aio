@@ -25,15 +25,16 @@ import io.ktor.response.*
 import kotlin.test.*
 import io.ktor.server.testing.*
 import com.github.fscarponi.plugins.*
+import it.belabs.beristo.tests.utils.withServer
 
 class ApplicationTest {
     @Test
-    fun testRoot() {
-        withTestApplication({ configureRouting() }) {
-            handleRequest(HttpMethod.Get, "/").apply {
-                assertEquals(HttpStatusCode.OK, response.status())
-                assertEquals("Hello World!", response.content)
-            }
+    fun testRoot(): Unit = withServer {
+
+        handleRequest(HttpMethod.Get, "/").apply {
+            assertEquals(HttpStatusCode.OK, response.status())
+            assertEquals("Hello World!", response.content)
         }
+
     }
 }
