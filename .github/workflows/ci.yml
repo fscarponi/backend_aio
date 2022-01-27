@@ -35,7 +35,7 @@ jobs:
         id: gradle
         uses: eskatos/gradle-command-action@v1
         with:
-          arguments: :backend_aio:build
+          arguments: build
         env:
           MONGO_URL: localhost:27017
           JWT_ISSUER: TestIssuer
