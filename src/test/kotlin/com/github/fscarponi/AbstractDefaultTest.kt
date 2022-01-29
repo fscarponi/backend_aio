@@ -1,4 +1,4 @@
-package it.belabs.beristo.tests
+package com.github.fscarponi
 
 import com.github.fscarponi.di.DIModules
 

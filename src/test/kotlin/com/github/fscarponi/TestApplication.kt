@@ -1,6 +1,6 @@
-package it.belabs.beristo.tests.utils
+package com.github.fscarponi
 
-import com.github.fscarponi.managerModule
+
 import com.github.fscarponi.routes.auths.authenticatedWs
 import io.ktor.application.*
 import io.ktor.http.*
