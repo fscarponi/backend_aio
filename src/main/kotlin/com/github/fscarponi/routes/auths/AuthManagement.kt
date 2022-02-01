@@ -23,6 +23,7 @@ interface AuthTokenGenerator {
     fun generateToken(subject: String, role: Role): AuthTokenResponseData
 }
 
+//todo token refresh
 data class AIOTokenGenerator(
     private val secret: String,
     private val issuer: String,
@@ -87,7 +88,7 @@ fun Route.authenticatedWs(
     val verifier: JWTVerifier by DI.direct {} .di.instance()//TODO NOT RIGHT INVOCATION FOR DI application.di do not build as expected
     val jwt: String by call.parameters
     val decodedJwt = verifier.verify(jwt)!!
-    val claimRole = decodedJwt.claims["role"]?.let { Role.valueOf(it.asString().toUpperCase()) }
+    val claimRole = decodedJwt.claims["role"]?.let { Role.valueOf(it.asString().uppercase(Locale.getDefault())) }
     try {
         require(decodedJwt.expiresAt.toInstant() >= Instant.now()) { "JWT expired" }
         require(claimRole != null) { "No role found in claim \"role\"" }

@@ -1,12 +1,20 @@
 package com.github.fscarponi.db
 
+import InstantSerializer
+import kotlinx.serialization.Serializable
 import java.time.Instant
 
+@Serializable
 data class User(
-    val userName: String,
     val mail: String,
     val hashPassword: String,
-    val activationDate: Instant? = null,
-    val lastPasswordModification: Instant,
-    val isBanned: Boolean = false
+    @Serializable(with = InstantSerializer::class)
+    val creationInstant: Instant? = Instant.now(),
+    @Serializable(with = InstantSerializer::class)
+    val lastPasswordModificationInstant: Instant? = null,
+    val isBanned: Boolean = false,
+    val verificationToken: String
 )
+
+
+
