@@ -1,6 +1,7 @@
 val ktorVersion: String by project
 val kotlinVersion: String by project
 val logbackVersion: String by project
+val mongoVersion: String by project
 
 plugins {
     application
@@ -45,6 +46,11 @@ dependencies {
     //DI
     implementation("org.kodein.di:kodein-di:7.10.0")
     implementation("org.kodein.di:kodein-di-framework-ktor-server-jvm:7.10.0")
+
+    //DB
+    implementation("org.litote.kmongo:kmongo:$mongoVersion")
+    implementation("org.litote.kmongo:kmongo-coroutine:$mongoVersion")
+
 
 
     implementation("org.junit.jupiter:junit-jupiter:5.7.0")
