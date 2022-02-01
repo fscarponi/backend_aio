@@ -1,6 +1,5 @@
 package com.github.fscarponi.db
 
-import InstantSerializer
 import kotlinx.serialization.Serializable
 import java.time.Instant
 
